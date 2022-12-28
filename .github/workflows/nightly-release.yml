@@ -241,11 +241,8 @@ jobs:
      runs-on: ubuntu-latest
      needs: [prepare_release]
      strategy:
-       matrix:
-         version: [
-           {repo: "alvr-org/alvr-gearvr", apk-name: alvr_client_gearvr.apk},
-           {repo: "alvr-org/alvr-cardboard", apk-name: alvr_client_cardboard.apk},
-          ]
+      matrix:
+        version: [{repo: "alvr-org/alvr-gearvr", apk-name: alvr_client_gearvr.apk},{repo: "alvr-org/alvr-cardboard", apk-name: alvr_client_cardboard.apk}]
      steps:
        - uses: actions/checkout@v2
          with:
